@@ -6,10 +6,11 @@ export default function Results(props) {
 
   if (props.results && props.results.meanings) {
     return (
-      <div className="Results">
-        <h2>{props.results.word}</h2>
-        <h5 className="text-secondary">{props.results.phonetic}</h5>
-
+      <div className="Results mt-4">
+        <h2 className="text-center">
+          <strong>{props.results.word}</strong> /  
+          {" "}{props.results.phonetic}
+        </h2>
         {props.results.meanings.map((meaning, index) => (
           <Meaning meaning={meaning} key={index} />
         ))}
