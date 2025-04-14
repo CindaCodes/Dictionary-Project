@@ -1,2 +1,24 @@
-.Dictionary {
+input {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-script);
+  width: 100%;
+  caret-Color: #FFD65D;
+}
+
+input::placeholder {
+  color: #000;
+  opacity: 0.8;
+}
+
+input:focus {
+  outline: none; 
+  box-shadow: 0 0 8px #FFD65D;
+  border: 1px solid #FFD65D; 
 }
