@@ -1,42 +1,29 @@
 import React from "react";
-
+import Synonyms from "./Synonyms";
+import Antonyms from "./Antonyms";
 export default function Meaning(props) {
-  const { meaning } = props;
-
-  if (!meaning || !meaning.definition) {
-    return null;
-  }
+  const { definitions, synonyms, antonyms, partOfSpeech } = props.meaning;
 
   return (
     <div className="Meaning">
+      <h3 className="part-of-speech highlight">{partOfSpeech}</h3>
+
       <div className="definition-box">
-        <h4>{meaning.partOfSpeech}</h4>
-        <strong>Definition:</strong> {meaning.definition}
-        {meaning.example && (
-          <p>
-            <strong>Example:</strong> <em>{meaning.example}</em>
-          </p>
-        )}
-        {meaning.synonyms && meaning.synonyms.length > 0 && (
-          <div className="synonym-list">
-            <strong>Synonyms:</strong>
-            <ul>
-              {meaning.synonyms.map((synonym, index) => (
-                <li key={index}>{synonym}</li>
-              ))}
-            </ul>
+        {definitions.map((definition, index) => (
+          <div className="definition-item" key={index}>
+            <p>
+              <strong>Definition {index + 1}:</strong> {definition.definition}
+            </p>
+            {definition.example && (
+              <p className="example">
+                <strong>Example:</strong> <em>{definition.example}</em>
+              </p>
+            )}
           </div>
-        )}
-        {meaning.antonyms && meaning.antonyms.length > 0 && (
-          <div className="antonym-list">
-            <strong>Antonyms:</strong>
-            <ul>
-              {meaning.antonyms.map((antonym, index) => (
-                <li key={index}>{antonym}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        ))}
+
+        <Synonyms synonyms={synonyms} />
+        <Antonyms antonyms={antonyms} />
       </div>
     </div>
   );
