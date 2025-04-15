@@ -9,7 +9,7 @@ input {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: var(--font-script);
   width: 100%;
-  caret-Color: #FFD65D;
+  caret-color: #ffd65d;
 }
 
 input::placeholder {
@@ -18,7 +18,55 @@ input::placeholder {
 }
 
 input:focus {
-  outline: none; 
-  box-shadow: 0 0 8px #FFD65D;
-  border: 1px solid #FFD65D; 
+  outline: none;
+  box-shadow: 0 0 8px #ffd65d;
+  border: 1px solid #ffd65d;
+}
+
+.SynAnto-container {
+  margin-top: 10px;
+}
+
+.syn-ant-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.syn-ant-item {
+  background-color: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.definition-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.definition-item {
+  background-color: #f0f0f0;
+  padding: 12px 16px; /* soft blue accent */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.definition-item p {
+  margin: 6px 0;
+}
+
+.example {
+  color: #555;
+  font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+  .syn-ant-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
