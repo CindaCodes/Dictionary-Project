@@ -41,7 +41,7 @@ body {
   max-width: 200px;
 }
 
-.Results{
+.Results {
   font-family: var(--font-script);
 }
 
@@ -54,7 +54,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
- font-family: var(--font-script);
+  font-family: var(--font-script);
 }
 
 .definition-box p {
@@ -62,7 +62,7 @@ body {
 }
 
 .highlight {
-   text-shadow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
+  text-shadow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
     0 0 40px #ffd65d;
 }
 
@@ -82,5 +82,10 @@ footer a {
 }
 footer a:hover {
   font-size: 1.5rem;
+}
 
+@media (max-width: 768px) {
+  .container {
+    margin: 0 auto;
+  }
 }
