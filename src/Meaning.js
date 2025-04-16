@@ -1,8 +1,10 @@
 import React from "react";
 import Synonyms from "./Synonyms";
 import Antonyms from "./Antonyms";
+
 export default function Meaning(props) {
-  const { definitions, synonyms, antonyms, partOfSpeech } = props.meaning;
+  const { definitions, partOfSpeech, synonyms, antonyms } = props.meaning;
+
 
   return (
     <div className="Meaning">
@@ -21,9 +23,22 @@ export default function Meaning(props) {
             )}
           </div>
         ))}
+        {(synonyms.length > 0 || antonyms.length > 0) && (
+          <p className="syn-ant-hint text-center mt-3">
+            <em>Click a word for a new definition</em>
+          </p>
+        )}
+        <Synonyms
+          synonyms={synonyms}
+          onSearch={props.onSearch}
+          setKeyword={props.setKeyword}
+        />
 
-        <Synonyms synonyms={synonyms} />
-        <Antonyms antonyms={antonyms} />
+        <Antonyms
+          antonyms={antonyms}
+          onSearch={props.onSearch}
+          setKeyword={props.setKeyword}
+        />
       </div>
     </div>
   );

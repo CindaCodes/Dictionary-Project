@@ -1,26 +1,19 @@
-import "./Dictionary.css";
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import Results from "./Results";
+import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
 
-  function handleResponse(response) {
-    setResults(response.data[0]);
+  function handleKeywordChange(event) {
+    setKeyword(event.target.value);
   }
-  function search(event) {
-    event.preventDefault();
 
-    if (!keyword.trim()) {
-      setError("Please enter a word to search!");
-      setResults(null);
-      return;
-    }
-
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+  function fetchDefinition(word) {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios
       .get(apiUrl)
       .then((response) => {
@@ -28,21 +21,34 @@ export default function Dictionary() {
         setError(null);
       })
       .catch(() => {
-       setError(
-         <>
-           😅 Uhhh ohhh! No results found for <strong>"{keyword}"</strong>.
-           <br />
-           Try a different word?
-         </>
-       );
-
+        setError(
+          <>
+            😅 Uhhh ohhh! No results found for <strong>"{word}"</strong>.
+            <br />
+            Try a different word?
+          </>
+        );
         setResults(null);
       });
   }
 
-  function handleKeywordChange(event) {
-    setKeyword(event.target.value);
-  }
+ function search(eventOrWord) {
+   if (typeof eventOrWord === "string") {
+     setKeyword(eventOrWord);
+     fetchDefinition(eventOrWord);
+     window.scrollTo({ top: 0, behavior: "smooth" }); // 🪄 scroll to top
+   } else {
+     eventOrWord.preventDefault();
+     if (!keyword.trim()) {
+       setError("Please enter a word to search!");
+       setResults(null);
+       return;
+     }
+     fetchDefinition(keyword);
+     window.scrollTo({ top: 0, behavior: "smooth" }); // 🪄 scroll to top
+   }
+ }
+
 
   return (
     <div className="Dictionary">
@@ -52,11 +58,13 @@ export default function Dictionary() {
           placeholder="Search for a word..."
           autoFocus={true}
           onChange={handleKeywordChange}
+          value={keyword}
         />
       </form>
 
       {error && <div className="error-message">{error}</div>}
-      {results && <Results results={results} />}
+
+      <Results results={results} onSearch={search} setKeyword={setKeyword} />
     </div>
   );
 }
