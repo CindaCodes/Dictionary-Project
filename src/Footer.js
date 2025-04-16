@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="custom-footer text-center mt-4">
+    <footer className="custom-footer text-center highlight mt-4">
       <p>
         This project was{" "}
         <a
