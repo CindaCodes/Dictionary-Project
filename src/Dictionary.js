@@ -23,35 +23,36 @@ export default function Dictionary() {
       .catch(() => {
         setError(
           <>
-            😅 Uhhh ohhh! No results found for <strong>"{word}"</strong>.
+            ✨ Oh dear, it seems the magic has eluded us...
             <br />
-            Try a different word?
+            No results found for <strong>"{word}"</strong>.
+            <br />
+            Perhaps, try a different word to unlock the hidden secrets?
           </>
         );
         setResults(null);
       });
   }
 
- function search(eventOrWord) {
-   if (typeof eventOrWord === "string") {
-     setKeyword(eventOrWord);
-     fetchDefinition(eventOrWord);
-     window.scrollTo({ top: 0, behavior: "smooth" }); // 🪄 scroll to top
-   } else {
-     eventOrWord.preventDefault();
-     if (!keyword.trim()) {
-       setError("Please enter a word to search!");
-       setResults(null);
-       return;
-     }
-     fetchDefinition(keyword);
-     window.scrollTo({ top: 0, behavior: "smooth" }); // 🪄 scroll to top
-   }
- }
-
+  function search(eventOrWord) {
+    if (typeof eventOrWord === "string") {
+      setKeyword(eventOrWord);
+      fetchDefinition(eventOrWord);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      eventOrWord.preventDefault();
+      if (!keyword.trim()) {
+        setError("Please enter a word to search!");
+        setResults(null);
+        return;
+      }
+      fetchDefinition(keyword);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
 
   return (
-    <div className="Dictionary">
+    <div className="Dictionary mt-3">
       <form onSubmit={search}>
         <input
           type="search"
