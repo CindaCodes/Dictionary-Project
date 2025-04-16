@@ -1,44 +1,44 @@
 :root {
   --font-script: "Eczar", serif;
   --font-title: "Carattere", cursive;
+  --color-mint: #a6d6b3;
+  --color-blush: #f4a9b8;
+  --color-lavender: #b9a5d6;
+  --color-cream: #f8f1e7;
+  --glow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
+    0 0 40px #ffd65d;
+  --color-text: #4c445c;
+  --shadow: 0 4px 30px rgba(64, 44, 79, 0);
 }
 
 body {
-  background-image: url("./background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  background: var(--color-lavender);
+  color:var(--color-text)
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-mint);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  padding: 1rem;
+  box-shadow: var(--shadow);
   margin: 2rem auto;
+  padding: 1rem;
 }
 
-.App-header {
-  margin: 10px 0;
+.Hero {
+  align-items: center;
+  background-image: url("./background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-title);
-  text-shadow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
-    0 0 40px #ffd65d;
-}
-
-.App-header h1 {
-  font-size: 3rem;
-}
-
-.App-logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 200px;
+  font-family: var(--font-title);
+  height: 60vh;
+  justify-content: flex-end;
+  padding: 2rem;
+  text-align: center;
 }
 
 .Results {
@@ -46,15 +46,12 @@ body {
 }
 
 .definition-box {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--color-mint);
   border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
   font-family: var(--font-script);
+  margin-bottom: 1rem;
+  padding: 1.5rem;
 }
 
 .definition-box p {
@@ -62,8 +59,7 @@ body {
 }
 
 .highlight {
-  text-shadow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
-    0 0 40px #ffd65d;
+  text-shadow: var(--glow);
 }
 
 footer {
@@ -72,16 +68,16 @@ footer {
 }
 
 footer a {
-  color: black;
-  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.1rem;
   font-weight: bold;
-  text-shadow: 0 0 5px #fff, 0 0 10px #ffd65d, 0 0 20px #ffd65d,
-    0 0 40px #ffd65d;
+  text-decoration: none;
+  text-shadow: var(--glow);
   transition: color 0.3s ease;
-  font-size: 1.25rem;
 }
+
 footer a:hover {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
