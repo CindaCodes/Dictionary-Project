@@ -15,7 +15,7 @@ export default function Results(props) {
 
   return (
     <div className="Results mt-4">
-      <h2 className="text-center">
+      <h2 className="text-center highlight">
         <strong>{results.word}</strong> / {phonetic}
       </h2>
 
