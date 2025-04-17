@@ -15,7 +15,6 @@ export default function Dictionary() {
   }
 
   function handlePhotoResponse(response) {
-    console.log("🌅 Photo data:", response.data);
     setPhotos(response.data.photos);
   }
 
@@ -32,7 +31,7 @@ export default function Dictionary() {
           <>
             ✨ Oh dear, it seems the magic has eluded us...
             <br />
-            No results found for <strong>"{word}"</strong>.
+            No definition found for <strong>"{word}"</strong>.
             <br />
             Perhaps, try a different word to unlock the hidden secrets?
           </>

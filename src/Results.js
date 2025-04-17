@@ -7,9 +7,6 @@ export default function Results(props) {
 
   if (!results || !results.meanings) return null;
 
-  console.log("📦 Results visible:", props.results);
-  console.log("🔊 Phonetics data:", props.results.phonetics);
-
   const phonetic =
     results.phonetic || results.phonetics?.find((p) => p.text)?.text;
 
