@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
+  }
+
+  function handlePhotoResponse(response) {
+    console.log("🌅 Photo data:", response.data);
+    setPhotos(response.data.photos);
   }
 
   function fetchDefinition(word) {
@@ -32,6 +39,10 @@ export default function Dictionary() {
         );
         setResults(null);
       });
+
+    let key = process.env.REACT_APP_API_KEY;
+    let photoApiUrl = `https://api.shecodes.io/images/v1/search?query=${word}&key=${key}`;
+    axios.get(photoApiUrl).then(handlePhotoResponse);
   }
 
   function search(eventOrWord) {
@@ -66,6 +77,7 @@ export default function Dictionary() {
       {error && <div className="error-message">{error}</div>}
 
       <Results results={results} onSearch={search} setKeyword={setKeyword} />
+      <Photos photos={photos} />
     </div>
   );
 }

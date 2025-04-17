@@ -81,7 +81,12 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-  .container {
-    margin: 0 auto;
+  body {
+    background: var(--color-mint);
   }
+  .container {
+    margin: 0;
+    border-radius: 0;
+  }
+
 }
