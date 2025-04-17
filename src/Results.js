@@ -13,7 +13,7 @@ export default function Results(props) {
   return (
     <div className="Results mt-4">
       <h2 className="text-center highlight">
-        <strong>{results.word}</strong> / {phonetic}
+        <strong>{results.word}</strong>  {phonetic}
       </h2>
 
       {results.phonetics && <Phonetics phonetics={results.phonetics} />}

@@ -63,7 +63,7 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary mt-3">
-      <form onSubmit={search}>
+      <form onSubmit={search} className="search-form mb-1">
         <input
           type="search"
           placeholder="Search for a word..."
@@ -71,6 +71,9 @@ export default function Dictionary() {
           onChange={handleKeywordChange}
           value={keyword}
         />
+        <button type="submit" className="mobile-only">
+          Search
+        </button>
       </form>
 
       {error && <div className="error-message">{error}</div>}
