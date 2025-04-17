@@ -25,14 +25,6 @@ Welcome to Wordly Wise, your friendly React-powered dictionary app!Search for an
 
 🌙 Clean, minimal UI (soon with dark mode?)
 
-🚀 Getting Started
-
-Clone and run locally:
-
-git clone https://github.com/CindaCodes/dictionary-project.git
-cd dictionary-project
-npm install
-npm start
 
 📸 Preview
 
