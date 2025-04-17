@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+📚 Wordly Wise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Wordly Wise, your friendly React-powered dictionary app!Search for any word and get its definitions, phonetics, and audio pronunciation in a snap. Simple, sleek, and smart — just like you ✨
 
-## Available Scripts
+🔗 [Live Demo](https://wordly-wise.netlify.app/)
 
-In the project directory, you can run:
 
-### `npm start`
+🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+⚛️ React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🎨 CSS for styling
 
-### `npm test`
+📡 dictionaryapi.dev – open-source dictionary API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✨ Features
 
-### `npm run build`
+🔍 Real-time word search
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🔤 Audio pronunciation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📖 Clear definitions + parts of speech
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🎧 Phonetic transcription
 
-### `npm run eject`
+🌙 Clean, minimal UI (soon with dark mode?)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone and run locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone https://github.com/CindaCodes/dictionary-project.git
+cd dictionary-project
+npm install
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📸 Preview
 
-## Learn More
+Elegant and intuitive interface made for curious minds 💡
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🧐 Inspiration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was built as part of a SheCodes React Add-on challenge. 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📬 Let's Connect
 
-### Analyzing the Bundle Size
+Got ideas? Suggestions? Feel free to open an issue or reach out via GitHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
